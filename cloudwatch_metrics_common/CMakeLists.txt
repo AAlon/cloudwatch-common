@@ -25,11 +25,11 @@ target_include_directories(${PROJECT_NAME} PUBLIC
 ## Testing ##
 #############
 
-enable_testing()
 find_package(GTest QUIET)
 if(NOT GTEST_FOUND)
   message(WARNING "Could not find GTest. Not building unit tests.")
 else()
+  enable_testing()
   add_executable(test_cloudwatch_metrics_common
     test/main_test.cpp
     test/shared_object_test.cpp
